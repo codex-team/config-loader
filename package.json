@@ -1,6 +1,6 @@
 {
   "name": "config-loader",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Config loader for Cloud Native applications",
   "repository": {
     "type": "git",
