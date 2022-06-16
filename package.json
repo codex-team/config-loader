@@ -1,0 +1,15 @@
+{
+  "name": "config-loader",
+  "version": "1.0.0",
+  "description": "Config loader for Cloud Native applications",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codex-team/config-loader.git"
+  },
+  "author": "",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/codex-team/config-loader/issues"
+  },
+  "homepage": "https://github.com/codex-team/config-loader#readme"
+}
