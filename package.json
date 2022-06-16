@@ -7,7 +7,7 @@
     "url": "git+https://github.com/codex-team/config-loader.git"
   },
   "author": "",
-  "license": "Apache",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/codex-team/config-loader/issues"
   },
