@@ -1,6 +1,7 @@
 import * as yaml from 'js-yaml';
 import * as fs from 'fs';
-import * as lodash from 'lodash';
+import merge from 'lodash.merge';
+import isArray from 'lodash.isarray';
 
 /**
  * Merge arrays, if there are arrays in objects
@@ -11,7 +12,7 @@ import * as lodash from 'lodash';
  * @param srcValue - source object
  */
 function mergeArrays<Config>(objValue: Config, srcValue: Config): unknown {
-  if (lodash.isArray(objValue)) {
+  if (isArray(objValue)) {
     return objValue.concat(srcValue);
   }
 }
@@ -32,7 +33,7 @@ export default function<Config> (...paths: Array<string>): Config {
   }
 
   files.forEach((file) => {
-    lodash.merge(config, file, mergeArrays);
+    merge(config, file, mergeArrays);
   });
 
   return config;
