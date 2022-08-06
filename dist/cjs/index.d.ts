@@ -1,2 +1,2 @@
-import loadConfig from './loadConfig';
+import loadConfig from './loadConfig.js';
 export { loadConfig };
