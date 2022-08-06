@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "outDir": "./build",
+    "target": "es2021",
+    "module": "es2020",
+    "outDir": "./dist/esm",
     "esModuleInterop": true,
     "strict": true,
     "declaration": true,

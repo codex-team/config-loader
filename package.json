@@ -2,16 +2,24 @@
   "name": "config-loader",
   "version": "0.0.1",
   "description": "Config loader for Cloud Native applications",
-  "main": "build/index.js",
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/codex-team/config-loader.git"
   },
-  "author": "",
+  "files": [
+    "dist/"
+  ],
+  "author": "CodeX Team <team@codex.so>",
   "license": "Apache-2.0",
   "scripts": {
     "lint": "eslint ./src",
-    "build": "tsc"
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig-cjs.json",
+    "build": "yarn build:esm && yarn build:cjs"
   },
   "bugs": {
     "url": "https://github.com/codex-team/config-loader/issues"
