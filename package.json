@@ -14,8 +14,10 @@
     "dist/"
   ],
   "exports": {
-    "import": "./dist/esm/index.js",
-    "require": "./dist/cjs/index.js"
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
   },
   "author": "CodeX Team <team@codex.so>",
   "license": "Apache-2.0",
