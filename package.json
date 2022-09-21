@@ -13,16 +13,12 @@
   "files": [
     "dist/"
   ],
-  "exports": {
-    "import": "./dist/esm/index.js",
-    "require": "./dist/cjs/index.js"
-  },
   "author": "CodeX Team <team@codex.so>",
   "license": "Apache-2.0",
   "scripts": {
     "lint": "eslint ./src",
     "build:esm": "tsc -p tsconfig.json",
-    "build:cjs": "tsc -p tsconfig-cjs.json",
+    "build:cjs": "tsc -p tsconfig-cjs.json && ./override-package-json-cjs.sh",
     "build": "yarn build:esm && yarn build:cjs"
   },
   "bugs": {
