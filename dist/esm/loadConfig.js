@@ -6,7 +6,6 @@ import isArray from 'lodash.isarray';
  * Merge arrays, if there are arrays in objects
  *
  * @template Config - the type describing structure of yaml file
- *
  * @param objValue - object to merge with source
  * @param srcValue - source object
  */
@@ -19,7 +18,6 @@ function mergeArrays(objValue, srcValue) {
  * Parse yaml file to object by path
  *
  * @template Config - the type describing structure of yaml file
- *
  * @param paths - yaml file path
  */
 export default function (...paths) {
