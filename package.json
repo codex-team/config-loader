@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/codex-team/config-loader#readme",
   "dependencies": {
+    "eslint-plugin-n": "^15.2.5",
     "js-yaml": "^4.1.0",
     "lodash.isarray": "^4.0.0",
     "lodash.merge": "^4.6.2"
@@ -41,8 +42,8 @@
     "@types/lodash.isarray": "^4.0.7",
     "@types/lodash.merge": "^4.6.7",
     "@types/node": "^18.0.0",
-    "eslint": "^7.32.0",
-    "eslint-config-codex": "^1.6.4",
-    "typescript": "4.7.4"
+    "eslint": "^8.23.1",
+    "eslint-config-codex": "https://github.com/codex-team/eslint-config.git#665b5cbabd57ff1403460f46dd49814c4e2485be",
+    "typescript": "4.8.3"
   }
 }
