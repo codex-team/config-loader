@@ -37,7 +37,7 @@
     "@types/lodash.merge": "^4.6.7",
     "@types/node": "^18.0.0",
     "eslint": "^8.23.1",
-    "eslint-config-codex": "https://github.com/codex-team/eslint-config.git#665b5cbabd57ff1403460f46dd49814c4e2485be",
+    "eslint-config-codex": "^1.7.0",
     "typescript": "4.8.3"
   }
 }
