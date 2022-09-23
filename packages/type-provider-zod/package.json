@@ -1,6 +1,6 @@
 {
   "name": "@codex-team/config-loader-provider-zod",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "private": false,
   "description": "Zod provider for config loader",
   "main": "./dist/cjs/index.js",
