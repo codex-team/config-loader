@@ -1,44 +1,32 @@
 {
   "name": "config-loader",
   "version": "0.0.1",
+  "private": true,
   "description": "Config loader for Cloud Native applications",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/codex-team/config-loader.git"
   },
-  "files": [
-    "dist/"
-  ],
   "author": "CodeX Team <team@codex.so>",
   "license": "Apache-2.0",
   "scripts": {
-    "lint": "eslint ./src",
-    "build:esm": "tsc -p tsconfig.json",
-    "build:cjs": "tsc -p tsconfig-cjs.json && ./override-package-json-cjs.sh",
-    "build": "yarn build:esm && yarn build:cjs"
+    "lint": "eslint packages/**/*"
   },
   "bugs": {
     "url": "https://github.com/codex-team/config-loader/issues"
   },
   "homepage": "https://github.com/codex-team/config-loader#readme",
   "dependencies": {
-    "eslint-plugin-n": "^15.2.5",
-    "js-yaml": "^4.1.0",
-    "lodash.isarray": "^4.0.0",
-    "lodash.merge": "^4.6.2"
+    "eslint-plugin-n": "^15.2.5"
   },
   "devDependencies": {
-    "@types/js-yaml": "^4.0.5",
-    "@types/lodash.isarray": "^4.0.7",
-    "@types/lodash.merge": "^4.6.7",
-    "@types/node": "^18.0.0",
     "eslint": "^8.23.1",
     "eslint-config-codex": "^1.7.0",
+    "lerna": "^5.5.2",
     "typescript": "4.8.3"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.2.3",
+  "workspaces": [
+    "packages/*"
+  ]
 }

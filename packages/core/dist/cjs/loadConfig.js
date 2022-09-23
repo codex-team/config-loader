@@ -48,7 +48,7 @@ function mergeArrays(objValue, srcValue) {
  * @template Config - the type describing structure of yaml file
  * @param paths - yaml file path
  */
-function default_1(...paths) {
+function loadConfig(...paths) {
     const files = [];
     const config = {};
     for (const path of paths) {
@@ -59,4 +59,4 @@ function default_1(...paths) {
     });
     return config;
 }
-exports.default = default_1;
+exports.default = loadConfig;

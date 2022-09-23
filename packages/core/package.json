@@ -1,0 +1,38 @@
+{
+  "name": "@codex-team/config-loader",
+  "version": "0.0.1",
+  "description": "Config loader for Cloud Native applications",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codex-team/config-loader.git"
+  },
+  "files": [
+    "dist/"
+  ],
+  "author": "CodeX Team <team@codex.so>",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig-cjs.json && ../../override-package-json-cjs.sh",
+    "build": "yarn build:esm && yarn build:cjs"
+  },
+  "bugs": {
+    "url": "https://github.com/codex-team/config-loader/issues"
+  },
+  "homepage": "https://github.com/codex-team/config-loader#readme",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "lodash.isarray": "^4.0.0",
+    "lodash.merge": "^4.6.2"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.5",
+    "@types/lodash.isarray": "^4.0.7",
+    "@types/lodash.merge": "^4.6.7",
+    "@types/node": "^18.0.0"
+  }
+}
