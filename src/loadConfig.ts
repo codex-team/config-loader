@@ -22,7 +22,7 @@ function mergeArrays<Config>(objValue: Config, srcValue: Config): unknown {
  * @template Config - the type describing structure of yaml file
  * @param paths - yaml file path
  */
-export default function loadConfig<Config>(...paths: Array<string>): Config {
+export default function<Config> (...paths: Array<string>): Config {
   const files: Array<Config> = [];
   const config = {} as Config;
 
