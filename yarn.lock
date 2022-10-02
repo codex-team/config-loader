@@ -5,6 +5,24 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@codex-team/config-loader@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@codex-team/config-loader@workspace:."
+  dependencies:
+    "@types/js-yaml": ^4.0.5
+    "@types/lodash.isarray": ^4.0.7
+    "@types/lodash.merge": ^4.6.7
+    "@types/node": ^18.0.0
+    eslint: ^8.23.1
+    eslint-config-codex: ^1.7.0
+    eslint-plugin-n: ^15.2.5
+    js-yaml: ^4.1.0
+    lodash.isarray: ^4.0.0
+    lodash.merge: ^4.6.2
+    typescript: 4.8.3
+  languageName: unknown
+  linkType: soft
+
 "@es-joy/jsdoccomment@npm:~0.31.0":
   version: 0.31.0
   resolution: "@es-joy/jsdoccomment@npm:0.31.0"
@@ -438,24 +456,6 @@ __metadata:
   checksum: 902a9f5d8967a3e2faf138d5cb784b9979bad2e6db5357c5b21c568df4ebe62bcb15108af1b2253744844eb964fc023fbd9afbbbb6ddd0bcc204c6fb5b7bf3af
   languageName: node
   linkType: hard
-
-"config-loader@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "config-loader@workspace:."
-  dependencies:
-    "@types/js-yaml": ^4.0.5
-    "@types/lodash.isarray": ^4.0.7
-    "@types/lodash.merge": ^4.6.7
-    "@types/node": ^18.0.0
-    eslint: ^8.23.1
-    eslint-config-codex: ^1.7.0
-    eslint-plugin-n: ^15.2.5
-    js-yaml: ^4.1.0
-    lodash.isarray: ^4.0.0
-    lodash.merge: ^4.6.2
-    typescript: 4.8.3
-  languageName: unknown
-  linkType: soft
 
 "cross-spawn@npm:^7.0.2":
   version: 7.0.3

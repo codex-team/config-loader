@@ -1,6 +1,6 @@
 {
-  "name": "config-loader",
-  "version": "0.0.1",
+  "name": "@codex-team/config-loader",
+  "version": "0.0.1-alpha.2",
   "description": "Config loader for Cloud Native applications",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -20,6 +20,10 @@
     "build:esm": "tsc -p tsconfig.json",
     "build:cjs": "tsc -p tsconfig-cjs.json && ./override-package-json-cjs.sh",
     "build": "yarn build:esm && yarn build:cjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "bugs": {
     "url": "https://github.com/codex-team/config-loader/issues"
