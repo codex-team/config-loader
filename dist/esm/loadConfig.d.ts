@@ -1,7 +1,7 @@
+import { JsonObject } from './lib/types.js';
 /**
  * Parse yaml file to object by path
  *
- * @template Config - the type describing structure of yaml file
  * @param paths - yaml file path
  */
-export default function <Config>(...paths: Array<string>): Config;
+export default function loadConfig(...paths: Array<string | JsonObject>): JsonObject;

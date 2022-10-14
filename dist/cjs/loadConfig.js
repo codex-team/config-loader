@@ -30,10 +30,10 @@ const yaml = __importStar(require("js-yaml"));
 const fs = __importStar(require("fs"));
 const lodash_merge_1 = __importDefault(require("lodash.merge"));
 const lodash_isarray_1 = __importDefault(require("lodash.isarray"));
+const env_js_1 = require("./lib/env.js");
 /**
  * Merge arrays, if there are arrays in objects
  *
- * @template Config - the type describing structure of yaml file
  * @param objValue - object to merge with source
  * @param srcValue - source object
  */
@@ -45,18 +45,24 @@ function mergeArrays(objValue, srcValue) {
 /**
  * Parse yaml file to object by path
  *
- * @template Config - the type describing structure of yaml file
  * @param paths - yaml file path
  */
-function default_1(...paths) {
-    const files = [];
+function loadConfig(...paths) {
+    const configs = [
+        (0, env_js_1.readEnvConfig)(process.env),
+    ];
     const config = {};
     for (const path of paths) {
-        files.push(yaml.load(fs.readFileSync(path, 'utf8')));
+        if (typeof path === 'string') {
+            configs.push(yaml.load(fs.readFileSync(path, 'utf8')));
+        }
+        else {
+            configs.push(path);
+        }
     }
-    files.forEach((file) => {
+    configs.forEach((file) => {
         (0, lodash_merge_1.default)(config, file, mergeArrays);
     });
     return config;
 }
-exports.default = default_1;
+exports.default = loadConfig;
