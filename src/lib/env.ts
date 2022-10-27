@@ -15,11 +15,11 @@ const CONFIG_KEY_PART_PATTERN = /^[a-z][a-z0-9]*(?:[-_][a-z][a-z0-9]*)*$/i;
  * @param str - string to parse
  */
 function safeJsonParse(str: string): [Error | null, JsonPrimitive] {
-    try {
-        return [null, JSON.parse(str)];
-    } catch (err) {
-        return [err as Error | null, str];
-    }
+  try {
+    return [null, JSON.parse(str)];
+  } catch (err) {
+    return [err as Error | null, str];
+  }
 }
 
 
