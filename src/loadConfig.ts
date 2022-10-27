@@ -23,10 +23,7 @@ function mergeArrays(objValue: JsonObject, srcValue: JsonObject): unknown {
  * @param paths - yaml file path
  */
 export default function loadConfig(...paths: Array<string | JsonObject>): JsonObject {
-  const configs = [
-    readEnvConfig(process.env),
-  ];
-  const config = {};
+  const configs: JsonObject[] = [];
 
   for (const path of paths) {
     if (typeof path === 'string') {
@@ -35,6 +32,10 @@ export default function loadConfig(...paths: Array<string | JsonObject>): JsonOb
       configs.push(path);
     }
   }
+
+  configs.push(readEnvConfig(process.env))
+
+  const config = {};
 
   configs.forEach((file) => {
     merge(config, file, mergeArrays);
