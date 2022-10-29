@@ -20,10 +20,7 @@ function mergeArrays(objValue, srcValue) {
  * @param paths - yaml file path
  */
 export default function loadConfig(...paths) {
-    const configs = [
-        readEnvConfig(process.env),
-    ];
-    const config = {};
+    const configs = [];
     for (const path of paths) {
         if (typeof path === 'string') {
             configs.push(yaml.load(fs.readFileSync(path, 'utf8')));
@@ -32,6 +29,8 @@ export default function loadConfig(...paths) {
             configs.push(path);
         }
     }
+    configs.push(readEnvConfig(process.env));
+    const config = {};
     configs.forEach((file) => {
         merge(config, file, mergeArrays);
     });
