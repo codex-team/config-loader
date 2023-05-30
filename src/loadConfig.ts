@@ -33,7 +33,7 @@ export default function loadConfig(...paths: Array<string | JsonObject>): JsonOb
     }
   }
 
-  configs.push(readEnvConfig(process.env))
+  configs.push(readEnvConfig(process.env));
 
   const config = {};
 
