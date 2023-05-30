@@ -2,15 +2,16 @@ import * as yaml from 'js-yaml';
 import * as fs from 'fs';
 import merge from 'lodash.merge';
 import isArray from 'lodash.isarray';
+import { readEnvConfig } from './lib/env.js';
+import { JsonObject } from './lib/types.js';
 
 /**
  * Merge arrays, if there are arrays in objects
  *
- * @template Config - the type describing structure of yaml file
  * @param objValue - object to merge with source
  * @param srcValue - source object
  */
-function mergeArrays<Config>(objValue: Config, srcValue: Config): unknown {
+function mergeArrays(objValue: JsonObject, srcValue: JsonObject): unknown {
   if (isArray(objValue)) {
     return objValue.concat(srcValue);
   }
@@ -19,18 +20,24 @@ function mergeArrays<Config>(objValue: Config, srcValue: Config): unknown {
 /**
  * Parse yaml file to object by path
  *
- * @template Config - the type describing structure of yaml file
  * @param paths - yaml file path
  */
-export default function<Config> (...paths: Array<string>): Config {
-  const files: Array<Config> = [];
-  const config = {} as Config;
+export default function loadConfig(...paths: Array<string | JsonObject>): JsonObject {
+  const configs: JsonObject[] = [];
 
   for (const path of paths) {
-    files.push(yaml.load(fs.readFileSync(path, 'utf8')) as Config);
+    if (typeof path === 'string') {
+      configs.push(yaml.load(fs.readFileSync(path, 'utf8')) as JsonObject);
+    } else {
+      configs.push(path);
+    }
   }
 
-  files.forEach((file) => {
+  configs.push(readEnvConfig(process.env))
+
+  const config = {};
+
+  configs.forEach((file) => {
     merge(config, file, mergeArrays);
   });
 

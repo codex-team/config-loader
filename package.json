@@ -1,6 +1,6 @@
 {
   "name": "@codex-team/config-loader",
-  "version": "0.0.1-alpha.2",
+  "version": "0.1.0-rc1",
   "description": "Config loader for Cloud Native applications",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -35,13 +35,13 @@
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
-    "eslint-plugin-n": "^16.0.0",
     "@types/js-yaml": "^4.0.5",
     "@types/lodash.isarray": "^4.0.7",
     "@types/lodash.merge": "^4.6.7",
     "@types/node": "^20.2.5",
     "eslint": "^8.23.1",
     "eslint-config-codex": "^1.7.0",
+    "eslint-plugin-n": "^16.0.0",
     "typescript": "5.0.4"
   },
   "packageManager": "yarn@3.2.3"
