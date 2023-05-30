@@ -17,6 +17,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "lint": "eslint ./src",
+    "lint:ci": "eslint ./src --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif",
     "build:esm": "tsc -p tsconfig.json",
     "build:cjs": "tsc -p tsconfig-cjs.json && ./override-package-json-cjs.sh",
     "build": "yarn build:esm && yarn build:cjs"
